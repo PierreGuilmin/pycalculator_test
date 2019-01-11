@@ -1,9 +1,9 @@
-[![build status](https://travis-ci.org/PierreGuilmin/pycalculator.svg?branch=master)](https://travis-ci.org/PierreGuilmin/pycalculator)
-[![documentation status](https://readthedocs.org/projects/pycalculator/badge/?version=latest)](https://pycalculator.readthedocs.io/en/latest/?badge=latest)
+[![build status](https://travis-ci.org/PierreGuilmin/pycalculator_test.svg?branch=master)](https://travis-ci.org/PierreGuilmin/pycalculator_test)
+[![documentation status](https://readthedocs.org/projects/pycalculator_test/badge/?version=latest)](https://pycalculator_test.readthedocs.io/en/latest/?badge=latest)
 
 :construction: Work in progress... :construction:
 
-# pycalculator
+# pycalculator_test
 
 This project is a Python inline terminal `pycalculator`.
 
