@@ -44,13 +44,14 @@ $ conda env remove --name pycalculator_env
 The environment was created with the following command
 ```bash
 # crate the conda-env
-conda create --name pycalculator_env python=3.6
+conda create --name pycalculator_env python=3.6 sphinx sphinx_rtd_theme
+pip install sphinxcontrib-napoleon
 ```
 
 And the requirements were exported with the folowing command:
 ```bash
-# export the current conda-env requirements as .yaml (without the final "prefix: ..." line)
-$ conda env export --no-builds --name pycalculator_env | grep -v "^prefix: " > environment.yaml
+# export the current conda-env requirements as .yaml (without the final "prefix: ..." line and some useless not available on Linux MacOS specific libraries)
+conda env export --no-builds --name pycalculator_env | grep -E -v "^prefix|libcxx|libcxxabi" > environment.yaml
 ```
 
 ### Emoji commit code table
