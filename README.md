@@ -20,6 +20,8 @@ $ git clone https://github.com/PierreGuilmin/pycalculator.git
 
 https://github.com/StevenBlack/hosts/blob/master/ci/install_conda.sh
 https://github.com/StevenBlack/hosts/blob/master/ci/setup_conda_env.sh
+https://gist.github.com/dan-blanchard/7045057
+https://choosealicense.com/
 
 ### Setup a Python conda-environment on your local computer
 
