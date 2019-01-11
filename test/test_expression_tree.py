@@ -172,6 +172,6 @@ class TestClassExpressionTreeBuilder(unittest.TestCase):
 
 
 # Shell command to run the test:
-# $ python -m unittest -v tests.test_expression_tree
+# $ python -m unittest -v test.test_expression_tree
 if __name__ == '__main__':
     unittest.main()

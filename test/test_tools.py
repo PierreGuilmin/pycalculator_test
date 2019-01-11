@@ -14,6 +14,6 @@ class TestModuleTools(unittest.TestCase):
 
 
 # Shell command to run the test:
-# $ python -m unittest -v tests.test_tools
+# $ python -m unittest -v test.test_tools
 if __name__ == '__main__':
     unittest.main()

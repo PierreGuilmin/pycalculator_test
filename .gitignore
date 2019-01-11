@@ -8,6 +8,6 @@ temp/**
 !temp/.gitkeep
 
 # docs/ sphinx specific files
-docs/build
-docs/source/_static
-docs/source/_templates
+doc/build
+doc/source/_static
+doc/source/_templates
