@@ -1,6 +1,7 @@
 name: pycalculator_env
 channels:
   - defaults
+  - conda-forge
 dependencies:
   - alabaster=0.7.12
   - asn1crypto=0.24.0
