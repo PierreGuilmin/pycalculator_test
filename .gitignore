@@ -1,0 +1,13 @@
+# Python's specific
+__pycache__/
+# **__pycache__/
+
+
+# temp folder
+temp/**
+!temp/.gitkeep
+
+# docs/ sphinx specific files
+docs/build
+docs/source/_static
+docs/source/_templates

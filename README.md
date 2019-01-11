@@ -1,0 +1,77 @@
+[![build status](https://travis-ci.org/PierreGuilmin/pycalculator.svg?branch=master)](https://travis-ci.org/PierreGuilmin/pycalculator)
+[![documentation status](https://readthedocs.org/projects/pycalculator/badge/?version=latest)](https://pycalculator.readthedocs.io/en/latest/?badge=latest)
+
+:construction: Work in progress... :construction:
+
+# pycalculator
+
+This project is a Python inline terminal `pycalculator`.
+
+***
+
+## Work with this repository
+
+### Clone the repository
+
+To clone this repository on your local computer please run:
+```bash
+$ git clone https://github.com/PierreGuilmin/pycalculator.git
+```
+
+### Setup a Python conda-environment on your local computer
+
+> :warning: We assume you have `conda` installed on your computer, otherwise please see https://conda.io/docs/index.html (conda documentation) and https://conda.io/docs/_downloads/conda-cheatsheet.pdf (conda cheat sheet).
+
+The repository was written and tested under `Python 3.6`. You can see the requirements under [`environment.yaml`](environment.yaml). To create the conda-env, please run the following command:
+```bash
+# create the conda-env
+$ conda env create --file environment.yaml
+```
+
+Some useful command lines to work with this conda-env:
+```bash
+# activate the conda-env
+$ source activate pycalculator_env
+
+# deactivate the conda-env
+$ source deactivate
+
+# remove the conda-env
+$ conda env remove --name pycalculator_env
+```
+
+### Notes
+The environment was created with the following command
+```bash
+# crate the conda-env
+conda create --name pycalculator_env python=3.6
+```
+
+And the requirements were exported with the folowing command:
+```bash
+# export the current conda-env requirements as .yaml (without the final "prefix: ..." line)
+$ conda env export --name pycalculator_env | grep -v "^prefix: " > environment.yaml
+```
+
+### Emoji commit code table
+
+Please use the following table to commit code:
+
+| emoji        | meaning                      | code           |
+| :----------: | :--------------------------- | :------------- |
+| :sos:        | critical bug                 | `:sos:`        |
+| :warning:    | bug                          | `:warning:`    |
+| :flashlight: | simplification/clarification | `:flashlight:` |
+| :clipboard:  | comment                      | `:clipboard:`  |
+| :sparkles:   | typos & style                | `:sparkles:`   |
+| :tada:       | new feature                  | `:tada:`       |
+| :cloud:      | minor modification           | `:cloud:`      |
+
+For example if you want to commit a new rocket feature — `🎉 new feature, flying rocket!` — please do:
+```diff
+# bad syntax
+- $ git commit -m 'new feature, flying rocket!'
+
+# good syntax
++ $ git commit -m ':tada: new feature, flying rocket!'
+```
