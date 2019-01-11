@@ -23,7 +23,7 @@ install:
     - source activate pycalculator_env
 
 script:
-    - python -m unittest -v tests/test_*.py
-    - cd docs
+    - python -m unittest -v test/test_*.py
+    - cd doc
     - make doctest
     - make html

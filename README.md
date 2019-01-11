@@ -1,5 +1,5 @@
 [![build status](https://travis-ci.com/PierreGuilmin/pycalculator_test.svg?branch=master)](https://travis-ci.com/PierreGuilmin/pycalculator_test)
-[![documentation status](https://readthedocs.org/projects/pycalculator_test/badge/?version=latest)](https://pycalculator_test.readthedocs.io/en/latest/?badge=latest)
+[![documentation status](https://readthedocs.org/projects/pycalculator-test/badge/?version=latest)](https://pycalculator-test.readthedocs.io/en/latest/?badge=latest)
 
 :construction: Work in progress... :construction:
 
@@ -17,6 +17,9 @@ To clone this repository on your local computer please run:
 ```bash
 $ git clone https://github.com/PierreGuilmin/pycalculator.git
 ```
+
+https://github.com/StevenBlack/hosts/blob/master/ci/install_conda.sh
+https://github.com/StevenBlack/hosts/blob/master/ci/setup_conda_env.sh
 
 ### Setup a Python conda-environment on your local computer
 
