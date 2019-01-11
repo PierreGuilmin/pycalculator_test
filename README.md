@@ -50,7 +50,7 @@ conda create --name pycalculator_env python=3.6
 And the requirements were exported with the folowing command:
 ```bash
 # export the current conda-env requirements as .yaml (without the final "prefix: ..." line)
-$ conda env export --name pycalculator_env | grep -v "^prefix: " > environment.yaml
+$ conda env export --no-builds --name pycalculator_env | grep -v "^prefix: " > environment.yaml
 ```
 
 ### Emoji commit code table
