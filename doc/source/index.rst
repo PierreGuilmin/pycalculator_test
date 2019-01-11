@@ -1,12 +1,12 @@
 Welcome to pycalculator's documentation!
 ========================================
 
-.. image:: https://travis-ci.org/PierreGuilmin/pycalculator.svg?branch=master
-    :target: https://travis-ci.org/PierreGuilmin/pycalculator
+.. image:: https://travis-ci.com/PierreGuilmin/pycalculator_test.svg?branch=master
+    :target: https://travis-ci.com/PierreGuilmin/pycalculator_test
     :alt: build status
 
-.. image:: https://readthedocs.org/projects/pycalculator/badge/?version=latest
-    :target: https://pycalculator.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/pycalculator-test/badge/?version=latest
+    :target: https://pycalculator-test.readthedocs.io/en/latest/?badge=latest
     :alt: documentation status
 
 .. toctree::

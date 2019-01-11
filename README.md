@@ -3,6 +3,8 @@
 
 :construction: Work in progress... :construction:
 
+See documentation at: https://pycalculator-test.readthedocs.io/en/latest/
+
 # pycalculator_test
 
 This project is a Python inline terminal `pycalculator`.
