@@ -23,7 +23,7 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]] || [[ "$TRAVIS_OS_NAME" == "linux" ]] ; then
     bash miniconda3.sh -b -p "$HOME/miniconda3"
 
 else
-    choco install miniconda3
+    #choco install miniconda3
 
     # install Miniconda
     echo "Installing Miniconda..."
@@ -32,7 +32,7 @@ else
     echo "start..."
     ls
 
-    start /wait "demo" ./miniconda3.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=./
+    start /wait "demo" .\miniconda3.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=.\
 
     ls
 
