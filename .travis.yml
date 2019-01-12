@@ -1,4 +1,4 @@
-language: generic
+language: shell
 os:
     - linux
     - osx
@@ -7,6 +7,7 @@ os:
 install:
     # install conda with custom script
     - bash travis/install_conda.sh
+    - export PATH="$HOME/miniconda3/bin:$PATH"
 
     # create and activate conda environment
     - conda env create --file environment.yaml
