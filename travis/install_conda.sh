@@ -26,6 +26,6 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]] || [[ "$TRAVIS_OS_NAME" == "linux" ]] ; then
     conda info -a
 
 else
-    curl https://repo.continuum.io/miniconda/Miniconda3-latest-Windows-x86_64.sh -o miniconda.sh;
     echo "Oups..."
+    exit 1
 fi

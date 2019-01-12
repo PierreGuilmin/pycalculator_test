@@ -6,7 +6,7 @@ os:
 
 install:
     # install conda with custom script
-    - travis/install_conda.sh
+    - bash travis/install_conda.sh
 
     # create and activate conda environment
     - conda env create --file environment.yaml
