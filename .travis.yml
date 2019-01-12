@@ -6,8 +6,6 @@ os:
 
 before_install:
     - export PATH="$HOME/miniconda3/bin:$PATH"
-    # give execution permissions to travis/install_conda.sh
-    #- chmod +x travis/install_conda.sh
 
 install:
     # install conda with custom script
