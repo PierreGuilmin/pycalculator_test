@@ -4,10 +4,12 @@ os:
     - osx
     - windows
 
+before_install:
+    export PATH="$HOME/miniconda3/bin:$PATH"
+
 install:
     # install conda with custom script
     - bash travis/install_conda.sh
-    - export PATH="$HOME/miniconda3/bin:$PATH"
 
     # create and activate conda environment
     - conda env create --file environment.yaml
