@@ -27,7 +27,7 @@ else
     echo "start..."
     ls
 
-    miniconda3.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=%UserProfile%\miniconda3
+    start ./miniconda3.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=%UserProfile%\miniconda3
 
     echo "done"
 fi
