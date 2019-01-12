@@ -34,7 +34,7 @@ else
 
     echo "start..."
     #start /wait "demo" .\miniconda3.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=.\
-    miniconda3.exe
+    ./miniconda3.exe
 
     ls
 
