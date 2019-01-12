@@ -25,7 +25,7 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]] || [[ "$TRAVIS_OS_NAME" == "linux" ]] ; then
     conda info -a
 
 else
-    wget https://repo.continuum.io/miniconda/Miniconda3-latest-Windows-x86_64.sh -O miniconda.sh
+    wget https://repo.continuum.io/miniconda/Miniconda3-latest-Windows-x86_64.exe -O miniconda.exe
     echo "$HOME"
     echo "$PATH"
     bash miniconda.sh -b -p "$HOME/miniconda3"
