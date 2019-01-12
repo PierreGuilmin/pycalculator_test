@@ -1,4 +1,6 @@
 import unittest
+import sys, os
+sys.path.insert(0, os.path.abspath('pycalculator'))
 
 from pycalculator.tools import *
 

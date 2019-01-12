@@ -2,28 +2,18 @@ language: generic
 os:
     - linux
     - osx
+    - windows
 
-# see https://conda.io/docs/user-guide/tasks/use-conda-with-travis-ci.html
 install:
-    # install conda
-    - if [[ "$TRAVIS_OS_NAME" == "osx"   ]]; then
-        curl https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o miniconda.sh;
-        fi
-    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-        wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-        fi
-    - bash miniconda.sh -b -p $HOME/miniconda
-    - export PATH="$HOME/miniconda/bin:$PATH"
-    - conda config --set always_yes yes --set changeps1 no
-    - conda update conda
-    - conda info -a
+    # install conda with custom script
+    - travis/install_conda.sh
 
     # create and activate conda environment
     - conda env create --file environment.yaml
     - source activate pycalculator_env
 
 script:
-    - python -m unittest -v test/test_*.py
+    - python -m unittest discover -v test
     - cd doc
     - make doctest
     - make html

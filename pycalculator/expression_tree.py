@@ -293,6 +293,10 @@ class ExpressionTreeBuilder():
     
     The algorithm is based on a modified version of the Shunting-yard algorithm from Wikipedia (see See Also section).
 
+    Warnings
+    --------
+    This class doesn't support functions and unary operators yet.
+
     Class Attributes
     ----------------
     operator: `dict` with {key = operator symbol: value = corresponding ``Operator`` object}
@@ -325,14 +329,11 @@ class ExpressionTreeBuilder():
                  '*': Operator('*', operator.mul    , 'binary', 'left' , 3),
                  '/': Operator('/', operator.truediv, 'binary', 'left' , 3), 
                  '+': Operator('+', operator.add    , 'binary', 'left' , 2),
-                 '-': Operator('-', operator.sub    , 'binary', 'left' , 2),
-                 'max': Operator('max', max, 'function')}
+                 '-': Operator('-', operator.sub    , 'binary', 'left' , 2)}
 
-    symbols = ''.join([k for k, v in operators.items() if v.category != 'function']) + '(),'
+    symbols = ''.join(operators.keys()) + '(),'
     symbols_reg = '|'.join(a+b for a,b in zip(re.escape(symbols)[::2],
-                                              re.escape(symbols)[1::2])) +\
-                  '|' +\
-                  '|'.join([k for k, v in operators.items() if v.category == 'function'])
+                                              re.escape(symbols)[1::2]))
 
     def __init__(self, expr):
         """Create an ExpressionTreeBuilder object.
@@ -345,7 +346,6 @@ class ExpressionTreeBuilder():
         self.expr = expr
         self.output_queue = []
         self.operator_stack = []
-        self.comma_count_queue = 0
         self.chuncks = None
         self.tree = None
 
@@ -401,25 +401,8 @@ class ExpressionTreeBuilder():
     def _pop_last_operator_to_queue(self):
         """Pop the last operator on the stack to the output queue."""
         last_operator_node = self.operator_stack.pop()
-        if last_operator_node.value.category == 'function':
-            print("LOOOL")
-            #for i in range(self.comma_count_queue + 1):
-            a = self.output_queue.pop(0)
-            print(a.children)
-            print(last_operator_node.children)
-            last_operator_node.children = last_operator_node.children + [a]
-            #last_operator_node.children.append(a)
-            #last_operator_node.children.append(a)
-            print(a.children)
-            print(last_operator_node.children)
-                #print(i, self.output_queue, len(last_operator_node.children))
-            #self.comma_count_queue = 0
-            print(last_operator_node.children)
-        else:
-            last_operator_node.children.append(self.output_queue.pop(0))
+        last_operator_node.children.append(self.output_queue.pop(0))
         self.output_queue.append(last_operator_node)
-
-        #print(self.output_queue[0].children[0].children[0].children[0].value)
 
     def _operator_stack_not_empty(self):
         """Check if the operator stack is empty.
@@ -465,29 +448,23 @@ class ExpressionTreeBuilder():
                     self._pop_last_operator_to_queue()
                 self.operator_stack.pop()
 
-            elif chunck == ',':
-                self.comma_count_queue += 1
-
             # if chunck is an operator symbol
             elif chunck in self.operators.keys():
                 current_operator = ExpressionTreeBuilder.operators[chunck]
 
-                if current_operator.category == 'function':
-                    self.operator_stack.append(ExpressionTreeNode(current_operator))
-                else:
-                    while self._operator_stack_not_empty() and self._last_operator_on_stack() != '(' and\
-                          (\
-                              self._last_operator_on_stack().category == 'function'\
-                              or\
-                              self._last_operator_on_stack().precedence > current_operator.precedence\
-                              or\
-                              (self._last_operator_on_stack().precedence == current_operator.precedence and\
-                               self._last_operator_on_stack().associativity == 'left')
-                          ):
+                while self._operator_stack_not_empty() and self._last_operator_on_stack() != '(' and\
+                      (\
+                          self._last_operator_on_stack().category == 'function'\
+                          or\
+                          self._last_operator_on_stack().precedence > current_operator.precedence\
+                          or\
+                          (self._last_operator_on_stack().precedence == current_operator.precedence and\
+                           self._last_operator_on_stack().associativity == 'left')
+                      ):
 
-                        self._pop_last_operator_to_queue()
+                    self._pop_last_operator_to_queue()
 
-                    self.operator_stack.append(ExpressionTreeNode(current_operator, [self.output_queue.pop(0)]))
+                self.operator_stack.append(ExpressionTreeNode(current_operator, [self.output_queue.pop(0)]))
 
             # if chunck is a value
             else:
@@ -530,7 +507,3 @@ if __name__ == '__main__':
     # print(t.tree.evaluate())
 
     # x = ExpressionTreeBuilder('(1-2)*4^5') ; x.build(True)
-
-
-# div by 0 and other wrong operations
-# not empty infix
