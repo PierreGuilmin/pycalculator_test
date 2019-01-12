@@ -21,7 +21,7 @@ else
     # install Miniconda
     echo "Installing Miniconda..."
     wget https://repo.continuum.io/miniconda/Miniconda3-latest-Windows-x86_64.exe -O miniconda.exe
-    start /wait "" miniconda.exe /InstallationType=JustMe /AddToPath=0 /S /RegisterPython=0 /D=./
+    start /wait "" miniconda.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=%UserProfile%\Miniconda3
 fi
 
     # configure Miniconda
