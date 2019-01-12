@@ -4,7 +4,9 @@
 set -e
 
 if [[ "$TRAVIS_OS_NAME" == "osx" ]] || [[ "$TRAVIS_OS_NAME" == "linux" ]] ; then
-    # see https://conda.io/docs/user-guide/tasks/use-conda-with-travis-ci.html
+    # see 
+    # - https://conda.io/docs/user-guide/tasks/use-conda-with-travis-ci.html
+    # - https://conda.io/docs/user-guide/install/macos.html#install-macos-silent
 
     # install Miniconda
     echo "Installing Miniconda..."
@@ -25,7 +27,7 @@ else
     echo "start..."
     ls
 
-    start /wait "" miniconda3.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=%UserProfile%\miniconda3
+    miniconda3.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=%UserProfile%\miniconda3
 
     echo "done"
 fi
