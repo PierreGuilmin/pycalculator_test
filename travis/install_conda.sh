@@ -24,7 +24,9 @@ else
 
     echo "launch start"
 
-    start /wait "" miniconda.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=%UserProfile%\Miniconda3
+    exit 1
+
+    start /wait "" miniconda.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=%UserProfile%\miniconda3
 
     echo "done"
 fi

@@ -38,7 +38,7 @@ def color(string):
     ----------
     string : `str`
         String to parse and print.
-    
+
     Returns
     -------
     `str`

@@ -214,7 +214,7 @@ class ExpressionTreeNode():
             ...                    children=[ExpressionTreeNode(Operator('len', len, category='function'),
             ...                                                 children=[ExpressionTreeNode('Hello')])]).get_infix()
             "-len('Hello')"
-        """    
+        """
         if self.is_leaf():
             return repr(self.value)
         elif self.value.category == 'unary':
@@ -327,7 +327,7 @@ class ExpressionTreeBuilder():
 
     operators = {'^': Operator('^', operator.pow    , 'binary', 'right', 4),
                  '*': Operator('*', operator.mul    , 'binary', 'left' , 3),
-                 '/': Operator('/', operator.truediv, 'binary', 'left' , 3), 
+                 '/': Operator('/', operator.truediv, 'binary', 'left' , 3),
                  '+': Operator('+', operator.add    , 'binary', 'left' , 2),
                  '-': Operator('-', operator.sub    , 'binary', 'left' , 2)}
 
@@ -485,7 +485,7 @@ class ExpressionTreeBuilder():
 
     def evaluate(self):
         """Build the tree if not built and evaluate it.
-        
+
         Returns
         -------
         any

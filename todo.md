@@ -17,6 +17,7 @@
     - [ ] :tada: live parenthesis and operator coloring
 - [ ] :tada: propose automatic corrections
 - [ ] :tada: find a license (https://choosealicense.com/)
+- [ ] :tada: add codacy/codecoverage
 
 ### Sphinx
 - [ ] :flashlight: necessary to add `.. testsetup::` at the beginning of every module for the doctest to work
