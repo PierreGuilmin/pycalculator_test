@@ -27,14 +27,15 @@ else
 
     # install Miniconda
     echo "Installing Miniconda..."
-    wget -nv https://repo.continuum.io/miniconda/Miniconda3-latest-Windows-x86_64.exe -O miniconda3.exe
+    # Miniconda3-4.5.12-Windows-x86_64.exe  
+    wget -nv https://repo.continuum.io/miniconda/Miniconda3-4.5.12-Windows-x86_64.exe -O miniconda3.exe
 
     echo "start..."
     ls
 
     echo "start..."
     #start /wait "demo" .\miniconda3.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=.\
-    ./miniconda3.exe
+    ./miniconda3.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=.\
 
     ls
 
