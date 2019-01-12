@@ -32,7 +32,9 @@ else
     echo "start..."
     ls
 
-    start /wait "demo" .\miniconda3.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=.\
+    echo "start..."
+    #start /wait "demo" .\miniconda3.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=.\
+    .\miniconda3.exe
 
     ls
 
