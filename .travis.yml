@@ -6,9 +6,9 @@ os:
 
 before_install:
     # set miniconda3 path on macOS and Linux
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]] || [[ "$TRAVIS_OS_NAME" == "linux" ]] ; then
-        export PATH="$HOME/miniconda3/bin:$PATH"
-        fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]] || [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+          export PATH="$HOME/miniconda3/bin:$PATH"
+      fi
 
 install:
     # install conda with custom script

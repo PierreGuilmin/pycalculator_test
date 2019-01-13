@@ -17,7 +17,7 @@
 # exit the script if any command returns a non-zero status
 set -e
 
-if [[ "$TRAVIS_OS_NAME" == "osx" ]] || [[ "$TRAVIS_OS_NAME" == "linux" ]] ; then
+if [[ "$TRAVIS_OS_NAME" == "osx" ]] || [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     # install Miniconda
     echo "Installing Miniconda..."
     if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
