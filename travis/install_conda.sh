@@ -1,13 +1,15 @@
 #!/bin/bash
 
-# This script installs and setups conda on a Travis CI Windows, Linux or Mac OSX virtual machine.
+# This script installs and setups conda on a Travis CI Windows, Linux or macOS virtual machine.
 #
-# References
-# ----------
-# https://conda.io/docs/user-guide/tasks/use-conda-with-travis-ci.html
-# https://conda.io/docs/user-guide/install/macos.html#install-macos-silent
-# https://conda.io/docs/user-guide/install/windows.html#installing-in-silent-mode
-# https://chocolatey.org/packages/miniconda3
+# See Also
+# --------
+# - conda doc to use Travis CI: https://conda.io/docs/user-guide/tasks/use-conda-with-travis-ci.html
+# - conda doc to install in silent mode on macOS: https://conda.io/docs/user-guide/install/macos.html#install-macos-silent
+# - conda doc to install in silent mode on Windows: https://conda.io/docs/user-guide/install/windows.html#installing-in-silent-mode
+# - chocolatey doc to install conda on Windows: https://chocolatey.org/packages/miniconda3
+
+`Wikipedia 'ANSI escape code' article <https://en.wikipedia.org/wiki/ANSI_escape_code>`_
 
 # exit the script if any command returns a non-zero status
 set -e
@@ -27,7 +29,7 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]] || [[ "$TRAVIS_OS_NAME" == "linux" ]] ; then
 else
     #choco install miniconda3 --params="'/InstallationType:JustMe /AddToPath:1 /RegisterPython:0'"
     choco install miniconda3 --params="'/AddToPath:1'"
-
+    refreshenv
 fi
 
 # configure Miniconda
