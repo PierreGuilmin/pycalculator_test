@@ -6,7 +6,7 @@ os:
 
 before_install:
     # set miniconda3 path on macOS and Linux
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]] || [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
         export PATH="$HOME/miniconda3/bin:$PATH"
         fi
 
