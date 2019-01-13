@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script installs conda on a Travis Windows, Linux or Mac OSX virtual machine.
+# This script installs conda on a Travis CI Windows, Linux or Mac OSX virtual machine.
 #
 # References
 # ----------
@@ -23,23 +23,15 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]] || [[ "$TRAVIS_OS_NAME" == "linux" ]] ; then
     bash miniconda3.sh -b -p "$HOME/miniconda3"
 
 else
-    #choco install miniconda3
+    choco install miniconda3
 
     # install Miniconda
-    echo "Installing Miniconda..."
+    # echo "Installing Miniconda..."
     # Miniconda3-4.5.12-Windows-x86_64.exe  
-    wget -nv https://repo.continuum.io/miniconda/Miniconda3-4.5.12-Windows-x86_64.exe -O miniconda3.exe
-
-    echo "start..."
-    ls
-
-    echo "start..."
-    #start /wait "demo" .\miniconda3.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=.\
-    ./miniconda3.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=.\
-
-    ls
-
-    echo "done"
+    # wget -nv https://repo.continuum.io/miniconda/Miniconda3-latest-Windows-x86_64.exe -O miniconda3.exe
+    # echo "Start..."
+    # start /wait "" .\miniconda3.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /S /D=.\
+    # echo "Done!"
 
 fi
 
