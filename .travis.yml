@@ -6,14 +6,15 @@ os:
 
 before_install:
     # set miniconda3 path on macOS and Linux
-    - export PATH="$HOME/miniconda3/bin:$PATH"
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]] || [[ "$TRAVIS_OS_NAME" == "linux" ]] ; then
+          export PATH="$HOME/miniconda3/bin:$PATH"
+      fi
 
 install:
     # install conda with custom script
     - bash travis/install_conda.sh
 
     # create and activate conda environment
-    - ls
     - conda env create --file environment.yml
     - source activate pycalculator_env
 

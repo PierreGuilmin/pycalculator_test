@@ -17,10 +17,10 @@
 # exit the script if any command returns a non-zero status
 set -e
 
-if [[ "$TRAVIS_OS_NAME" == "osx" ]] || [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+if [[ "$TRAVIS_OS_NAME" == "osx" ]] || [[ "$TRAVIS_OS_NAME" == "linux" ]] ; then
     # install Miniconda
     echo "Installing Miniconda..."
-    if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+    if [[ "$TRAVIS_OS_NAME" == "osx" ]] ; then
         DOWNLOAD_LINK="https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh"
     else
         DOWNLOAD_LINK="https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh"
