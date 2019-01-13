@@ -15,7 +15,7 @@ install:
     - bash travis/install_conda.sh
 
     # create and activate conda environment
-    - conda env create --file environment.yml
+    - conda env create --file environment.yaml
     - source activate pycalculator_env
 
 script:
