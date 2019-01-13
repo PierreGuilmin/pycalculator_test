@@ -1,13 +1,9 @@
-# Python's specific
+# Python's bytecode compiled files
 __pycache__/
-# **__pycache__/
 
+# Sphinx build files in doc/
+doc/build
 
-# temp folder
+# temp/ folder
 temp/**
 !temp/.gitkeep
-
-# docs/ sphinx specific files
-doc/build
-doc/source/_static
-doc/source/_templates

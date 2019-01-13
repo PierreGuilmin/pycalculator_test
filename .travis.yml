@@ -2,10 +2,13 @@ language: shell
 os:
     - linux
     - osx
-    - windows
+    #- windows
 
 before_install:
-    - export PATH="$HOME/miniconda3/bin:$PATH"
+    # set miniconda3 path on macOS and Linux
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]] || [[ "$TRAVIS_OS_NAME" == "linux" ]] ; then
+          export PATH="$HOME/miniconda3/bin:$PATH"
+      fi
 
 install:
     # install conda with custom script
@@ -16,7 +19,10 @@ install:
     - source activate pycalculator_env
 
 script:
+    # run unit test
     - python -m unittest discover -v test
+
+    # run doctest and sphinx documentation build
     - cd doc
     - make doctest
     - make html

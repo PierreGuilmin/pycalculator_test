@@ -10,6 +10,15 @@
 | :tada:       | new feature                  | `:tada:`       |
 | :cloud:      | minor modification           | `:cloud:`      |
 
+Before publishing:
+- change pycalculator_test for pycalculator in `README.md`
+- reread `README.md`
+- > Blabla
+- add pip installation
+- https://pypi.org/project/binarytree/
+- doc, test, pycalculator
+- reinstall Sphinx and conda env
+
 ## General
 - [ ] :tada: package code and upload it to PyPI and conda
 - [ ] :tada: GUI (in JS?)
@@ -17,7 +26,10 @@
     - [ ] :tada: live parenthesis and operator coloring
 - [ ] :tada: propose automatic corrections
 - [ ] :tada: find a license (https://choosealicense.com/)
-- [ ] :tada: add codacy/codecoverage
+- [ ] :tada: add codacy/codecoverage GitHub marketplace extensions
+
+### Travis CI
+- [ ] :tada: add Windows support (update `travis/install_conda.sh` and `.travis.yml`)
 
 ### Sphinx
 - [ ] :flashlight: necessary to add `.. testsetup::` at the beginning of every module for the doctest to work
