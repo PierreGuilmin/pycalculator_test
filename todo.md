@@ -18,6 +18,7 @@ Before publishing:
 - https://pypi.org/project/binarytree/
 - doc, test, pycalculator
 - reinstall Sphinx and conda env
+- https://www.python.org/dev/peps/pep-0008/#maximum-line-length
 
 ## General
 - [ ] :tada: package code and upload it to PyPI and conda
